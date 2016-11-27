@@ -1,0 +1,8 @@
+<h1> Player list </h1>
+
+<li *ngFor="let player of players | async">
+  {{player.name}}
+</li>
+
+
+<button (click)="addPlayer()">Add Player</button>
