@@ -8,7 +8,9 @@ import { RouterModule, Routes } from '@angular/router';
 import { AppComponent } from './app.component';
 import { PlayerListComponent } from './player-list.component';
 import { TeamListComponent } from './team-list.component';
+import { TeamDetailComponent } from './team-detail.component';
 import { AddTeamComponent } from './add-team.component';
+import { AddPlayerComponent } from './add-player/add-player.component';
 
 // Must export the config
 export const firebaseConfig = {
@@ -33,6 +35,14 @@ const routes: Routes = [
     component: TeamListComponent
   },
   {
+    path: 'teams/:teamId',
+    component: TeamDetailComponent
+  },
+  {
+    path: 'teams/:teamId/add-player',
+    component: AddPlayerComponent
+  },
+  {
     path: 'add-team',
     component: AddTeamComponent
   }
@@ -43,7 +53,9 @@ const routes: Routes = [
     AppComponent,
     AddTeamComponent,
     PlayerListComponent,
-    TeamListComponent
+    TeamListComponent,
+    TeamDetailComponent,
+    AddPlayerComponent
   ],
   imports: [
     BrowserModule,

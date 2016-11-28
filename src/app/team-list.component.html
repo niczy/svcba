@@ -2,5 +2,5 @@ This is the team list.
 
 
 <li *ngFor="let team of teams | async">
-  {{team.name}}
+  <a [routerLink]="['/teams', team.name]"> {{team.name}} </a>
 </li>
