@@ -9,8 +9,7 @@ import { AngularFire} from 'angularfire2';
 })
 export class AppComponent {
   af: AngularFire;
-  title = 'app works!??';
-
+  title = 'SVCBA'
   constructor(af: AngularFire ) {
     this.af = af;
   }
