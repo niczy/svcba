@@ -14,8 +14,6 @@ import { AddPlayerComponent } from './add-player/add-player.component';
 import { AddSeasonComponent } from './add-season/add-season.component';
 import { MaterialModule } from '@angular/material';
 
-import 'hammerjs';
-
 
 // Must export the config
 export const firebaseConfig = {
@@ -65,7 +63,7 @@ const routes: Routes = [
     TeamListComponent,
     TeamDetailComponent,
     AddPlayerComponent,
-    AddSeasonComponent,
+    AddSeasonComponent
   ],
   imports: [
     BrowserModule,

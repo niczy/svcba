@@ -1,0 +1,20 @@
+
+md-sidenav {
+  background-color: white;
+  min-width: 50px;
+}
+md-nav-list a {
+  width: 100%;
+  height: 100%;
+}
+.nav-holder {
+  display: inline-block;
+  min-width: 50px;
+}
+.nav-content {
+  display: inline-block;
+  padding: 32px;
+}
+.app-title {
+  margin-left: 50px;
+}

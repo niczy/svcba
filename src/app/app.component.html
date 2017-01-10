@@ -1,9 +1,33 @@
-<button (click)="login()">Login</button>
-<button (click)="logout()">Logout</button>
+
 <div>
-<a routerLink='/players'>Players</a>
-<a routerLink='/teams'>Teams</a>
-<a routerLink='/add-team'>Add Team</a>
-<a routerLink='/add-season'>Add Season</a>
-</div>
-<router-outlet></router-outlet>
+<md-sidenav-container class="demo-root" fullscreen>
+  <md-sidenav #start>
+    <md-nav-list>
+      <a (click)="start.close()" routerLink='/players'>Players</a>
+      <hr>
+      <a (click)="start.close()" routerLink='/teams'>Teams</a>
+      <hr>
+      <a (click)="start.close()" routerLink='/add-team'>Add Team</a>
+      <hr>
+      <a (click)="start.close()" routerLink='/add-season'>Add Season</a>
+      <hr>
+      <button (click)="login()">Login</button> |
+      <button (click)="logout()">Logout</button>
+    </md-nav-list>
+  </md-sidenav>
+  <div>
+    <md-toolbar color="primary">
+      <button md-icon-button (click)="start.open()">
+        <md-icon class="md-24" >menu</md-icon>
+      </button>
+      <span class="app-title">My Application Title</span>
+    </md-toolbar>
+    <div class="content">
+      <div class="nav-holder">
+      </div>
+      <div class="nav-content">
+        <router-outlet></router-outlet>
+      </div>
+    </div>
+  </div>
+</md-sidenav-container>

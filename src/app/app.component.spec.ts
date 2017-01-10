@@ -5,6 +5,7 @@ import { AppComponent } from './app.component';
 import {
     RouterTestingModule
 } from '@angular/router/testing';
+import { MaterialModule } from '@angular/material';
 import { AngularFire} from 'angularfire2';
 
 class MockAngularFire {
@@ -17,7 +18,7 @@ describe('AppComponent', () => {
       declarations: [
         AppComponent
       ],
-      imports: [RouterTestingModule],
+      imports: [RouterTestingModule, MaterialModule.forRoot()],
       providers: [
             { provide: AngularFire, useClass: MockAngularFire}
       ],
