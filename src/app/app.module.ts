@@ -11,6 +11,11 @@ import { TeamListComponent } from './team-list.component';
 import { TeamDetailComponent } from './team-detail.component';
 import { AddTeamComponent } from './add-team.component';
 import { AddPlayerComponent } from './add-player/add-player.component';
+import { AddSeasonComponent } from './add-season/add-season.component';
+import { MaterialModule } from '@angular/material';
+
+import 'hammerjs';
+
 
 // Must export the config
 export const firebaseConfig = {
@@ -45,6 +50,10 @@ const routes: Routes = [
   {
     path: 'add-team',
     component: AddTeamComponent
+  },
+  {
+    path: 'add-season',
+    component: AddSeasonComponent
   }
 ];
 
@@ -55,14 +64,16 @@ const routes: Routes = [
     PlayerListComponent,
     TeamListComponent,
     TeamDetailComponent,
-    AddPlayerComponent
+    AddPlayerComponent,
+    AddSeasonComponent,
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
     AngularFireModule.initializeApp(firebaseConfig, authConfig),
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes),
+    MaterialModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]
