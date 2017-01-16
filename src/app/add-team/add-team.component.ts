@@ -10,7 +10,7 @@ import { Team } from '../team';
 export class AddTeamComponent implements OnInit {
   af: AngularFire;
   router: Router;
-  team: Team = { name: ''};
+  team: Team = { name: '', id: ''};
 
   constructor(af: AngularFire, router: Router) {
     this.af = af;
@@ -19,6 +19,7 @@ export class AddTeamComponent implements OnInit {
   ngOnInit(): void {
   }
   createTeam(team): void {
+    team.id = team.name;
     this.af.database.list('teams').push(team).then(data => {
       console.log(data);
       this.router.navigate(['/teams']);
