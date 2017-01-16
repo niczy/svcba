@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AngularFire} from 'angularfire2';
-import { Season } from '../season';
+import { Season } from '../core/season';
 
 @Component({
   selector: 'app-add-season',
