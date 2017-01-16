@@ -13,6 +13,7 @@ import { AddTeamComponent } from './add-team/add-team.component';
 import { AddPlayerComponent } from './add-player/add-player.component';
 import { AddSeasonComponent } from './add-season/add-season.component';
 import { MaterialModule } from '@angular/material';
+import { SeasonListComponent } from './season-list/season-list.component';
 
 
 // Must export the config
@@ -63,7 +64,8 @@ const routes: Routes = [
     TeamListComponent,
     TeamDetailComponent,
     AddPlayerComponent,
-    AddSeasonComponent
+    AddSeasonComponent,
+    SeasonListComponent
   ],
   imports: [
     BrowserModule,

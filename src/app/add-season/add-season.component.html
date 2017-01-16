@@ -1,3 +1,6 @@
-<p>
-  add-season works!
-</p>
+<div>
+  <md-input-container>
+    <input [(ngModel)] = "season.name" md-input placeholder="Season Name" value="Sushi">
+  </md-input-container>
+  <button md-button (click) = "createSeason(season)">Submit</button>
+</div>

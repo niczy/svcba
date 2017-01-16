@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AngularFire} from 'angularfire2';
-import { Team } from './team';
+import { Team } from '../team';
 
 @Component({
   selector: 'app-add-team',
