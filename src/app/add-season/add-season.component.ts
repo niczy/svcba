@@ -9,7 +9,7 @@ import { Season } from '../season';
 })
 export class AddSeasonComponent implements OnInit {
   af: AngularFire;
-  season: Season = { name: '' };
+  season: Season = { name: '', id: ''};
 
   constructor(af: AngularFire) {
     this.af = af;

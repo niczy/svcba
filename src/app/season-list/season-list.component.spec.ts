@@ -1,17 +1,36 @@
 /* tslint:disable:no-unused-variable */
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
+import { AngularFire, FirebaseListObservable } from 'angularfire2';
+import {
+    RouterTestingModule
+} from '@angular/router/testing';
+import { MaterialModule } from '@angular/material';
 import { DebugElement } from '@angular/core';
 
 import { SeasonListComponent } from './season-list.component';
 
+class MockAngularFire {
+
+  database = {
+    list: function(key) {
+      return new Promise<string[]>(
+        (resolve, reject) => { resolve(['']); });
+    },
+  };
+
+}
 describe('SeasonListComponent', () => {
   let component: SeasonListComponent;
   let fixture: ComponentFixture<SeasonListComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ SeasonListComponent ]
+      declarations: [ SeasonListComponent ],
+      imports: [RouterTestingModule, MaterialModule.forRoot()],
+      providers: [
+            { provide: AngularFire, useClass: MockAngularFire}
+      ],
     })
     .compileComponents();
   }));
