@@ -6,10 +6,10 @@ import { AngularFireModule, AuthProviders, AuthMethods } from 'angularfire2';
 import { RouterModule, Routes } from '@angular/router';
 
 import { AppComponent } from './app.component';
-import { PlayerListComponent } from './player-list.component';
-import { TeamListComponent } from './team-list.component';
-import { TeamDetailComponent } from './team-detail.component';
-import { AddTeamComponent } from './add-team.component';
+import { PlayerListComponent } from './player-list/player-list.component';
+import { TeamListComponent } from './team-list/team-list.component';
+import { TeamDetailComponent } from './team-detail/team-detail.component';
+import { AddTeamComponent } from './add-team/add-team.component';
 import { AddPlayerComponent } from './add-player/add-player.component';
 import { AddSeasonComponent } from './add-season/add-season.component';
 import { MaterialModule } from '@angular/material';
