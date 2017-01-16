@@ -53,6 +53,10 @@ const routes: Routes = [
   {
     path: 'add-season',
     component: AddSeasonComponent
+  },
+  {
+    path: 'seasons',
+    component: SeasonListComponent
   }
 ];
 
