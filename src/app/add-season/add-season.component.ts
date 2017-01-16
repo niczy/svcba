@@ -19,6 +19,7 @@ export class AddSeasonComponent implements OnInit {
   }
 
   createSeason(season): void {
+    season.id = season.name;
     this.af.database.list('seasons').push(season).then(data => {
       console.log(season);
     });

@@ -14,6 +14,7 @@ import { AddPlayerComponent } from './add-player/add-player.component';
 import { AddSeasonComponent } from './add-season/add-season.component';
 import { MaterialModule } from '@angular/material';
 import { SeasonListComponent } from './season-list/season-list.component';
+import { SeasonDetailComponent } from './season-detail/season-detail.component';
 
 
 // Must export the config
@@ -57,6 +58,10 @@ const routes: Routes = [
   {
     path: 'seasons',
     component: SeasonListComponent
+  },
+  {
+    path: 'seasons/:seasonId',
+    component: SeasonDetailComponent
   }
 ];
 
@@ -69,7 +74,8 @@ const routes: Routes = [
     TeamDetailComponent,
     AddPlayerComponent,
     AddSeasonComponent,
-    SeasonListComponent
+    SeasonListComponent,
+    SeasonDetailComponent
   ],
   imports: [
     BrowserModule,
