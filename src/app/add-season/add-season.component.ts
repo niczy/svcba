@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { AngularFire} from 'angularfire2';
 import { Season } from '../core/season';
+import { CoreService } from '../core/core.service';
 
 @Component({
   selector: 'app-add-season',
@@ -8,11 +8,9 @@ import { Season } from '../core/season';
   styleUrls: ['./add-season.component.css']
 })
 export class AddSeasonComponent implements OnInit {
-  af: AngularFire;
   season: Season = { name: '', id: ''};
 
-  constructor(af: AngularFire) {
-    this.af = af;
+  constructor(private core: CoreService) {
   }
 
   ngOnInit() {
@@ -20,7 +18,7 @@ export class AddSeasonComponent implements OnInit {
 
   createSeason(season): void {
     season.id = season.name;
-    this.af.database.list('seasons').push(season).then(data => {
+    this.core.addSeason(season).then(data => {
       console.log(season);
     });
   }

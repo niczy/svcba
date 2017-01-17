@@ -1,4 +1,6 @@
 import { Injectable } from '@angular/core';
+import { AngularFire} from 'angularfire2';
+
 import { Season } from './season';
 import { Player } from './player';
 import { Team } from './team';
@@ -6,16 +8,16 @@ import { Team } from './team';
 @Injectable()
 export class CoreService {
 
-  constructor() { }
+  constructor(private af: AngularFire) { }
   /** Creates a new season */
-  addSeason(season: Season): void {
-
+  addSeason(season: Season): firebase.database.ThenableReference {
+    return this.af.database.list('seasons').push(season);
   }
 
   /** Creates a new team */
   addTeam(team: Team): void {}
 
-  /** Registers teamId under seasonId */
+  /** Registers teamId under seasonId *:/
   registerTeam(teamId: string, seasonId: string): void {
 
   }

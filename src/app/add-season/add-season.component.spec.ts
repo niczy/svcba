@@ -2,14 +2,14 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
+import { CoreService } from '../core/core.service';
 import { MaterialModule } from '@angular/material';
-import { AngularFire} from 'angularfire2'
 
 import { AddSeasonComponent } from './add-season.component';
 import { FormsModule } from '@angular/forms';
 
 
-class MockAngularFire {
+class MockCoreService {
 
 }
 
@@ -22,7 +22,7 @@ describe('AddSeasonComponent', () => {
       declarations: [ AddSeasonComponent ],
       imports: [MaterialModule.forRoot(), FormsModule],
       providers: [
-            { provide: AngularFire, useClass: MockAngularFire}
+            { provide: CoreService, useClass: MockCoreService}
       ],
     })
     .compileComponents();
