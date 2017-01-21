@@ -13,7 +13,7 @@ export class TeamDetailComponent implements OnInit {
   private sub: any;
   private teamId: string;
   private players: FirebaseListObservable<any[]>;
-  private player: Player {name: '', id: ''};
+  private player: Player = {name: '', id: ''};
   constructor(private af: AngularFire,
     private route: ActivatedRoute,
     private router: Router,
