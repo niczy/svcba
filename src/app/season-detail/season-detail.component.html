@@ -1,3 +1,13 @@
-<p>
-  season-detail works!
-</p>
+<div>
+  Season {{ seasonId }}
+  <li *ngFor="let team of teams | async">
+    <a [routerLink]="['/teams', team.name]"> {{team.name}} </a>
+  </li>
+
+  <div>
+    <md-input-container>
+      <input [(ngModel)] = "team.name" md-input placeholder="Team Name" value="">
+    </md-input-container>
+    <button md-button (click) = "registerTeam(team)">Submit</button>
+  </div>
+</div>

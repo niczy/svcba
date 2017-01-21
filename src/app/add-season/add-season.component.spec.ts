@@ -11,7 +11,7 @@ import { FormsModule } from '@angular/forms';
 
 class MockCoreService {
 
-}
+};
 
 describe('AddSeasonComponent', () => {
   let component: AddSeasonComponent;

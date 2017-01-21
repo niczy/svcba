@@ -1,4 +1,13 @@
 This is the team detail page.
+Here is the list of players
 
+<li *ngFor="let player of players| async">
+  <a [routerLink]="['/players', player.id]"> {{player.name}} </a>
+</li>
 
-<a [routerLink]="['/teams', teamId, 'add-player']">Add Player</a>
+<div>
+  <md-input-container>
+    <input [(ngModel)] = "player.name" md-input placeholder="Player Name" value="">
+  </md-input-container>
+  <button md-button (click) = "addPlayer(player)">Submit</button>
+</div>
