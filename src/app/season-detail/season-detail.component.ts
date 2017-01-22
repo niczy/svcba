@@ -12,7 +12,7 @@ import { Team } from '../core/team';
 export class SeasonDetailComponent implements OnInit {
   private sub: any;
   private seasonId: string;
-  private team: Team = { name: '', id: '' };
+  private team: Team = <Team>{ name: '', id: '' };
   private teams: FirebaseListObservable<any[]>;
 
   constructor(

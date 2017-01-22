@@ -16,7 +16,7 @@ import { SeasonDetailComponent } from './season-detail.component';
 class MockCoreService {
   getAllTeams(seasonId: string): Promise<Team[]> {
     return new Promise<Team[]>(
-      (resolve, reject) => { resolve([{name: 'team', id: 'id'}]); });
+      (resolve, reject) => { resolve([<Team>{name: 'team', id: 'id'}]); });
   }
 };
 describe('SeasonDetailComponent', () => {

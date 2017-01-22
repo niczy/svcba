@@ -10,7 +10,7 @@ import { Team } from '../core/team';
 export class AddTeamComponent implements OnInit {
   af: AngularFire;
   router: Router;
-  team: Team = { name: '', id: ''};
+  team: Team = <Team>{ name: '', id: ''};
 
   constructor(af: AngularFire, router: Router) {
     this.af = af;

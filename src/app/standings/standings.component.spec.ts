@@ -2,6 +2,11 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { By } from '@angular/platform-browser';
 import { DebugElement } from '@angular/core';
+import {
+    RouterTestingModule
+} from '@angular/router/testing';
+import { MockCoreService } from '../core/testing/mockcore.service';
+import { CoreService } from '../core/core.service';
 
 import { StandingsComponent } from './standings.component';
 
@@ -11,7 +16,11 @@ describe('StandingsComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ StandingsComponent ]
+      imports: [RouterTestingModule],
+      declarations: [ StandingsComponent ],
+      providers: [
+            { provide: CoreService, useClass: MockCoreService}
+      ],
     })
     .compileComponents();
   }));
