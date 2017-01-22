@@ -3,6 +3,15 @@
 <md-sidenav-container class="demo-root" fullscreen>
   <md-sidenav #start>
     <md-nav-list>
+      <a (click)="start.close()"
+          [routerLink]="['/teams']">
+          Teams
+      </a>
+      <hr>
+      <a (click)="start.close()" routerLink='/schedule'>Scheudle</a>
+      <hr>
+      <a (click)="start.close()" routerLink='/standings'>Standings</a>
+      <hr>
       <a (click)="start.close()" routerLink='/seasons'>Past seasons</a>
       <hr>
       <button (click)="login()">Login</button> |

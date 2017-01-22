@@ -1,0 +1,7 @@
+<p>
+  schedule works!
+  <li *ngFor="let game of games | async">
+    <a> {{game.homeTeam.name}} vs {{game.awayTeam.name}} </a>
+  </li>
+  <a routerLink="/edit-schedule">Edit Schedule</a>
+</p>

@@ -5,4 +5,12 @@
 Seasons:
 <li *ngFor="let season of seasons | async">
   <a [routerLink]="['/seasons', season.name]"> {{season.name}} </a>
+  <button md-button (click) = "setActiveSeason(season.id)">Set Active</button>
 </li>
+
+<div>
+  <md-input-container>
+    <input [(ngModel)] = "season.name" md-input placeholder="Season Name" value="Sushi">
+  </md-input-container>
+  <button md-button (click) = "createSeason(season)">New Season</button>
+</div>

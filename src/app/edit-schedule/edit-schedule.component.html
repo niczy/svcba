@@ -1,0 +1,9 @@
+<p>
+  edit-schedule works!
+
+  <li *ngFor="let game of games">
+    <a> {{game.homeTeam.name}} vs {{game.awayTeam.name}} </a>
+  </li>
+
+  <button md-button (click) = "confirmSchedule(games)">Confirm</button>
+</p>

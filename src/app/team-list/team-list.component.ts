@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { AngularFire, FirebaseListObservable } from 'angularfire2';
+import { FirebaseListObservable, FirebaseObjectObservable } from 'angularfire2';
+import { CoreService } from '../core/core.service';
 
 @Component({
   selector: 'app-team-list',
@@ -7,11 +8,13 @@ import { AngularFire, FirebaseListObservable } from 'angularfire2';
 })
 export class TeamListComponent implements OnInit {
   teams: FirebaseListObservable<any[]>;
-  af: AngularFire;
-  constructor(af: AngularFire) {
-    this.af = af;
-  }
+  globalConfig: FirebaseObjectObservable<any>;
+  constructor(
+    private coreService: CoreService) {}
   ngOnInit(): void {
-    this.teams = this.af.database.list('teams');
+    this.globalConfig = this.coreService.getGlobalConfig();
+    this.globalConfig.subscribe(config => {
+      this.teams = this.coreService.getAllTeams(config.activeSeason);
+    })
   }
 }

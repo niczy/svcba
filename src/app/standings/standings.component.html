@@ -1,0 +1,8 @@
+<p>
+  standings works!
+
+  <li *ngFor="let team of teams">
+    <a [routerLink]="['/teams', team.name]"> {{team.name}} </a>
+  </li>
+
+</p>

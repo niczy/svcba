@@ -16,6 +16,10 @@ import { MaterialModule } from '@angular/material';
 import { SeasonListComponent } from './season-list/season-list.component';
 import { SeasonDetailComponent } from './season-detail/season-detail.component';
 import { PlayerDetailComponent } from './player-detail/player-detail.component';
+import { GComponent } from './g/g.component';
+import { ScheduleComponent } from './schedule/schedule.component';
+import { StandingsComponent } from './standings/standings.component';
+import { EditScheduleComponent } from './edit-schedule/edit-schedule.component';
 
 
 // Must export the config
@@ -73,6 +77,22 @@ const routes: Routes = [
     component: SeasonDetailComponent
   },
   {
+    path: 'standings/:seasonId',
+    component: StandingsComponent
+  },
+  {
+    path: 'standings',
+    component: StandingsComponent
+  },
+  {
+    path: 'schedule',
+    component: ScheduleComponent
+  },
+  {
+    path: 'edit-schedule',
+    component: EditScheduleComponent
+  },
+  {
     path: '',
     component: SeasonListComponent
   }
@@ -89,7 +109,11 @@ const routes: Routes = [
     AddSeasonComponent,
     SeasonListComponent,
     SeasonDetailComponent,
-    PlayerDetailComponent
+    PlayerDetailComponent,
+    GComponent,
+    ScheduleComponent,
+    StandingsComponent,
+    EditScheduleComponent
   ],
   imports: [
     BrowserModule,
